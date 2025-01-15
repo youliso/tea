@@ -1,0 +1,30 @@
+{
+  "name": "@youliso/tea-linux-x64-gnu",
+  "version": "0.0.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "tea.linux-x64-gnu.node",
+  "files": [
+    "tea.linux-x64-gnu.node"
+  ],
+  "author": "youliso <youliso@hotmail.com> (https://github.com/youliso)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youliso/clipboard"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "libc": [
+    "glibc"
+  ]
+}

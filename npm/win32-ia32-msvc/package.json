@@ -1,0 +1,27 @@
+{
+  "name": "@youliso/tea-win32-ia32-msvc",
+  "version": "0.0.0",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "ia32"
+  ],
+  "main": "tea.win32-ia32-msvc.node",
+  "files": [
+    "tea.win32-ia32-msvc.node"
+  ],
+  "author": "youliso <youliso@hotmail.com> (https://github.com/youliso)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youliso/clipboard"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}
