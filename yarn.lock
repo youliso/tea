@@ -84,6 +84,13 @@
   resolved "https://registry.npmmirror.com/@types/estree/-/estree-1.0.6.tgz"
   integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
+"@types/node@^22.10.6":
+  version "22.10.6"
+  resolved "https://registry.npmmirror.com/@types/node/-/node-22.10.6.tgz"
+  integrity sha512-qNiuwC4ZDAUNcY47xgaSuS92cjf8JbSUoaKS77bmLG1rU7MlATVSiw/IlrjtIyyskXBZ8KkNfjK/P5na7rgXbQ==
+  dependencies:
+    undici-types "~6.20.0"
+
 "@vercel/nft@^0.27.5":
   version "0.27.10"
   resolved "https://registry.npmmirror.com/@vercel/nft/-/nft-0.27.10.tgz"
@@ -229,7 +236,7 @@ balanced-match@^1.0.0:
   resolved "https://registry.npmmirror.com/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bindings@^1.4.0:
+bindings@*, bindings@^1.4.0:
   version "1.5.0"
   resolved "https://registry.npmmirror.com/bindings/-/bindings-1.5.0.tgz"
   integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
@@ -784,6 +791,11 @@ ms@^2.1.3:
   resolved "https://registry.npmmirror.com/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+node-addon-api@*:
+  version "8.3.0"
+  resolved "https://registry.npmmirror.com/node-addon-api/-/node-addon-api-8.3.0.tgz"
+  integrity sha512-8VOpLHFrOQlAH+qA0ZzuGRlALRA6/LVh8QJldbrC4DY0hXoMP0l4Acq8TzFC018HztWiRqyCEj2aTWY2UvnJUg==
+
 node-fetch@^2.6.7:
   version "2.7.0"
   resolved "https://registry.npmmirror.com/node-fetch/-/node-fetch-2.7.0.tgz"
@@ -1066,6 +1078,14 @@ tar@^7.4.0:
     mkdirp "^3.0.1"
     yallist "^5.0.0"
 
+tea-napi@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmmirror.com/tea-napi/-/tea-napi-0.0.5.tgz"
+  integrity sha512-k4VowBR8F8Rk+AcgP+tzZUwuMMyZBm7wSU4L/Pg5Avxao3Hb3nyJexYfpszQSpryUalwjVNHSljEdfBRFwjLAg==
+  dependencies:
+    bindings "*"
+    node-addon-api "*"
+
 temp-dir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/temp-dir/-/temp-dir-3.0.0.tgz"
@@ -1092,6 +1112,11 @@ type-fest@^0.13.1:
   version "0.13.1"
   resolved "https://registry.npmmirror.com/type-fest/-/type-fest-0.13.1.tgz"
   integrity sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==
+
+undici-types@~6.20.0:
+  version "6.20.0"
+  resolved "https://registry.npmmirror.com/undici-types/-/undici-types-6.20.0.tgz"
+  integrity sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==
 
 unicorn-magic@^0.1.0:
   version "0.1.0"
