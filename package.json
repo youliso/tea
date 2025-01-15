@@ -16,7 +16,7 @@
   "author": "youliso <youliso@hotmail.com> (https://github.com/youliso)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/youliso/clipboard"
+    "url": "https://github.com/youliso/tea"
   },
   "publishConfig": {
     "access": "public",
