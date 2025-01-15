@@ -1,4 +1,4 @@
-use napi::{bindgen_prelude::Buffer, Error, Result};
+use napi::{bindgen_prelude::Buffer, Result};
 use napi_derive::napi;
 
 const DELTA: u32 = 0x9e3779b9;
@@ -45,20 +45,17 @@ fn tea_decrypt(v: &mut [u32; 2], k: &[u32; 4], iter: usize) {
 #[napi(js_name = "teaDecrypt")]
 pub fn tea_decrypt_js(value: Buffer, key: Buffer, iter: u32) -> Result<Buffer> {
   let mut value_data: Vec<u8> = value.into();
-  let key_data: Vec<u8> = key.into();
+  let mut key_data: Vec<u8> = key.into();
 
-  if key_data.len() < TEA_KEY_LEN as usize {
-    return Err(Error::new(
-      napi::Status::InvalidArg,
-      "Expected second param (key) to be a Buffer at least 16 bytes".to_string(),
-    ));
+  if key_data.len() > TEA_KEY_LEN as usize {
+    key_data.truncate(TEA_KEY_LEN as usize);
+  } else if key_data.len() < TEA_KEY_LEN as usize {
+    key_data.resize(TEA_KEY_LEN as usize, 0);
   }
-
-  let key_data: &[u32] = bytemuck::cast_slice(&key_data);
 
   let cnt = value_data.len() / TEA_BLOCK_LEN as usize;
   let mut tmp = [0u32; 2];
-  let key: [u32; 4] = key_data[..4]
+  let key: [u32; 4] = bytemuck::cast_slice(&key_data)[..4]
     .try_into()
     .expect("Key slice must be exactly 4 elements");
 
@@ -77,20 +74,17 @@ pub fn tea_decrypt_js(value: Buffer, key: Buffer, iter: u32) -> Result<Buffer> {
 #[napi(js_name = "teaEncrypt")]
 pub fn tea_encrypt_js(value: Buffer, key: Buffer, iter: u32) -> Result<Buffer> {
   let mut value_data: Vec<u8> = value.into();
-  let key_data: Vec<u8> = key.into();
+  let mut key_data: Vec<u8> = key.into();
 
-  if key_data.len() < TEA_KEY_LEN as usize {
-    return Err(Error::new(
-      napi::Status::InvalidArg,
-      "Expected second param (key) to be a Buffer at least 16 bytes".to_string(),
-    ));
+  if key_data.len() > TEA_KEY_LEN as usize {
+    key_data.truncate(TEA_KEY_LEN as usize);
+  } else if key_data.len() < TEA_KEY_LEN as usize {
+    key_data.resize(TEA_KEY_LEN as usize, 0);
   }
-
-  let key_data: &[u32] = bytemuck::cast_slice(&key_data);
 
   let cnt = value_data.len() / TEA_BLOCK_LEN as usize;
   let mut tmp = [0u32; 2];
-  let key: [u32; 4] = key_data[..4]
+  let key: [u32; 4] = bytemuck::cast_slice(&key_data)[..4]
     .try_into()
     .expect("Key slice must be exactly 4 elements");
 
